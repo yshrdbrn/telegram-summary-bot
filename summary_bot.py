@@ -1,7 +1,14 @@
 import logging
+import os
 
 from telegram.ext import Updater, CommandHandler, PicklePersistence
-from secret import TOKEN
+
+token = None
+if not os.environ.get('TOKEN'):
+    from secret import TOKEN
+    token = TOKEN
+else:
+    token = os.environ['TOKEN']
 
 
 def start(update, context):
@@ -50,7 +57,7 @@ def delete_message(update, context):
 
 def main():
     persistence = PicklePersistence(filename='storage')
-    updater = Updater(token=TOKEN, persistence=persistence, use_context=True)
+    updater = Updater(token=token, persistence=persistence, use_context=True)
     dispatcher = updater.dispatcher
 
     # Set up logging
