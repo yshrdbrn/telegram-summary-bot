@@ -1,5 +1,5 @@
-# Secrets file
-secret.py
+# .env file
+.env
 
 # Storage file
 storage
