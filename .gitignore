@@ -1,6 +1,9 @@
 # Secrets file
 secret.py
 
+# Storage file
+storage
+
 # JetBrains IDE
 .idea/
 

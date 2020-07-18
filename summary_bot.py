@@ -28,7 +28,7 @@ def show_messages(update, context):
     else:
         output = ''
         for i in range(len(messages)):
-            output += str(i + 1) + '. ' + messages[i] + '\r\n'
+            output += str(i + 1) + '. ' + messages[i] + '\r\n\r\n'
         update.message.reply_text(output)
 
 def clear(update, context):
